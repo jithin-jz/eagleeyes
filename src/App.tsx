@@ -7,9 +7,9 @@ import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-bg-dark text-text-dark">
+    <div className="min-h-screen bg-ink text-paper">
       <Header />
-      <main className="mx-auto max-w-3xl px-5">
+      <main>
         <Hero />
         <Services />
         <About />

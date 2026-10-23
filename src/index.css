@@ -1,24 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #fcfcfc;
-  --color-bg-dark: #0a0a1a;
-  --color-surface: #f5f5f5;
-  --color-surface-dark: #141428;
-  --color-text: #0a0a0a;
-  --color-text-dark: #ececec;
-  --color-muted: #555;
-  --color-muted-dark: #999;
-  --color-faint: #999;
-  --color-faint-dark: #666;
-  --color-border: #e5e5e5;
-  --color-border-dark: #2a2a40;
-  --color-accent: #7c3aed;
-  --color-accent-light: #a78bfa;
-  --color-navy: #1a1a3e;
-  --color-navy-light: #2d2d5e;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --color-ink: #0b0b0c;
+  --color-ink-2: #121214;
+  --color-ink-3: #1a1a1d;
+  --color-line: #26262a;
+  --color-gold: #d3ad5b;
+  --color-gold-soft: #ebcd8c;
+  --color-gold-deep: #a8822e;
+  --color-paper: #ffffff;
+  --color-stone: #ecebe7;
+  --color-smoke: #a3a3a8;
+  --color-ash: #6b6b72;
+  --color-slate: #4a4a50;
+  --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-tech: 'Rajdhani', 'Montserrat', sans-serif;
 }
 
 /* Base styles */
@@ -28,15 +24,15 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-bg-dark);
-  color: var(--color-text-dark);
+  background-color: var(--color-ink);
+  color: var(--color-paper);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background-color: var(--color-accent);
-  color: white;
+  background-color: var(--color-gold);
+  color: var(--color-ink);
 }
 
 /* Custom scrollbar */
@@ -44,14 +40,44 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-dark);
+  background: var(--color-ink);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border-dark);
+  background: var(--color-line);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent);
+  background: var(--color-gold-deep);
+}
+
+/* Concentric rings, as on the card front */
+.rings {
+  background-image: repeating-radial-gradient(
+    circle at 50% 42%,
+    transparent 0,
+    transparent 46px,
+    rgba(255, 255, 255, 0.035) 47px,
+    transparent 48px
+  );
+}
+
+/* Hazard stripes, as on the card corner */
+.stripes {
+  background-image: repeating-linear-gradient(
+    -55deg,
+    var(--color-gold) 0 6px,
+    transparent 6px 14px
+  );
+}
+
+/* Short gold underline under section labels */
+.label-rule::after {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 2px;
+  margin-top: 0.6rem;
+  background: var(--color-gold);
 }
 
 /* Animation keyframes */
@@ -66,54 +92,16 @@ body {
   }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(124, 58, 237, 0.3);
-  }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.7s ease-out both;
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
-}
-
-.animate-slide-in-left {
-  animation: slideInLeft 0.5s ease-out forwards;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
+.animate-spin-slow {
+  animation: spin-slow 60s linear infinite;
 }
 
 /* Stagger animations */
@@ -121,40 +109,10 @@ body {
 .stagger-2 { animation-delay: 0.2s; }
 .stagger-3 { animation-delay: 0.3s; }
 .stagger-4 { animation-delay: 0.4s; }
-.stagger-5 { animation-delay: 0.5s; }
-.stagger-6 { animation-delay: 0.6s; }
-.stagger-7 { animation-delay: 0.7s; }
 
-/* Glass effect */
-.glass {
-  background: rgba(26, 26, 62, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(124, 58, 237, 0.15);
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Service card hover */
-.service-card {
-  transition: all 0.3s ease;
-}
-.service-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(124, 58, 237, 0.4);
-  background: rgba(26, 26, 62, 0.8);
-}
-
-/* Contact link hover */
-.contact-link {
-  transition: all 0.2s ease;
-}
-.contact-link:hover {
-  color: var(--color-accent-light);
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-spin-slow {
+    animation: none;
+  }
 }

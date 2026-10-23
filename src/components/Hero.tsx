@@ -1,71 +1,61 @@
-import { Eye } from 'lucide-react'
+import { CameraMark, Dial, Stripes } from './Logo'
+
+const tags = ['CCTV', 'Automation', 'Networking']
 
 export default function Hero() {
   return (
     <section
       id="hero"
       aria-labelledby="hero-heading"
-      className="scroll-mt-24 pb-10 pt-16 sm:pb-14 sm:pt-20"
+      className="rings relative scroll-mt-24 overflow-hidden border-b border-line"
     >
-      {/* Logo / Eye Icon */}
-      <div className="flex justify-center mb-8 animate-fade-in-up">
-        <div className="relative">
-          <div className="w-28 h-28 rounded-full border-2 border-accent/40 flex items-center justify-center animate-pulse-glow">
-            <div className="w-20 h-20 rounded-full border-2 border-accent-light/60 flex items-center justify-center">
-              <Eye className="w-10 h-10 text-accent-light" />
-            </div>
-          </div>
-          {/* Decorative lines */}
-          <div className="absolute top-1/2 -left-8 w-6 h-px bg-gradient-to-r from-transparent to-accent-light/50" />
-          <div className="absolute top-1/2 -right-8 w-6 h-px bg-gradient-to-l from-transparent to-accent-light/50" />
+      <div className="mx-auto flex max-w-6xl flex-col items-center px-5 pb-20 pt-16 sm:pb-28 sm:pt-20">
+        {/* Camera inside the dial */}
+        <div className="relative grid h-60 w-60 place-items-center animate-fade-in-up sm:h-72 sm:w-72">
+          <Dial className="animate-spin-slow absolute inset-0 h-full w-full" />
+          <CameraMark className="w-[58%]" />
         </div>
-      </div>
 
-      <h1
-        id="hero-heading"
-        className="text-center text-[2rem] sm:text-[2.75rem] font-semibold tracking-[-0.03em] text-text-dark animate-fade-in-up stagger-1"
-        style={{ opacity: 0 }}
-      >
-        Eagle Eye
-      </h1>
+        <h1
+          id="hero-heading"
+          className="mt-8 text-center text-[2.6rem] font-bold leading-none tracking-[0.18em] text-gold animate-fade-in-up stagger-1 sm:text-[4.5rem]"
+        >
+          EAGLE EYE
+        </h1>
 
-      <p
-        className="mt-3 text-center text-[14px] sm:text-[15px] uppercase tracking-[0.25em] text-faint-dark animate-fade-in-up stagger-2"
-        style={{ opacity: 0 }}
-      >
-        CCTV <span className="text-accent-light mx-2">·</span> Automation{' '}
-        <span className="text-accent-light mx-2">·</span> Networking
-      </p>
+        <p className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 font-tech text-[14px] font-medium uppercase tracking-[0.45em] text-gold/80 animate-fade-in-up stagger-2 sm:text-[17px]">
+          {tags.map((tag, i) => (
+            <span key={tag} className="flex items-center gap-4">
+              {i > 0 && <span className="text-gold/50">·</span>}
+              {tag}
+            </span>
+          ))}
+        </p>
 
-      <div
-        className="mt-8 max-w-xl mx-auto text-center space-y-4 text-[15px] leading-relaxed text-muted-dark animate-fade-in-up stagger-3"
-        style={{ opacity: 0 }}
-      >
-        <p>
+        <p className="mt-8 max-w-xl text-center text-[15px] leading-relaxed text-smoke animate-fade-in-up stagger-3">
           Professional security and technology solutions for homes and
           businesses. We design, install, and maintain CCTV systems, network
           infrastructure, biometric access, and smart automation, all backed by
           dedicated local support in Kayanna Bazar.
         </p>
+
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4 animate-fade-in-up stagger-4">
+          <a
+            className="rounded-sm bg-gold px-7 py-3 font-tech text-[14px] font-bold uppercase tracking-[0.2em] text-ink transition-colors hover:bg-gold-soft"
+            href="#contact"
+          >
+            Get in touch
+          </a>
+          <a
+            className="rounded-sm border border-gold/40 px-7 py-3 font-tech text-[14px] font-bold uppercase tracking-[0.2em] text-gold transition-colors hover:border-gold hover:bg-gold/10"
+            href="#services"
+          >
+            Our services
+          </a>
+        </div>
       </div>
 
-      <div
-        className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-[13px] animate-fade-in-up stagger-4"
-        style={{ opacity: 0 }}
-      >
-        <a
-          className="rounded-full bg-accent px-5 py-2 text-white font-medium transition-all hover:bg-accent-light hover:scale-105"
-          href="#contact"
-        >
-          Get in touch
-        </a>
-        <a
-          className="text-faint-dark transition-colors hover:text-text-dark"
-          href="#services"
-        >
-          View services
-        </a>
-      </div>
+      <Stripes className="absolute bottom-0 right-6 h-7 w-36 sm:right-10" />
     </section>
   )
 }

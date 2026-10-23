@@ -6,7 +6,6 @@ import {
   Fingerprint,
   Lock,
   Cpu,
-  Check,
 } from 'lucide-react'
 
 const services = [
@@ -60,59 +59,70 @@ export default function Services() {
     <section
       id="services"
       aria-labelledby="services-heading"
-      className="grid scroll-mt-24 gap-3 border-t border-border-dark/70 py-10 sm:grid-cols-[6.5rem_1fr] sm:gap-8 sm:py-14"
+      className="scroll-mt-16 bg-ink-2 py-20 sm:py-28"
     >
-      <h2
-        id="services-heading"
-        className="pt-1 font-mono text-[11px] uppercase tracking-[0.12em] text-faint-dark sm:sticky sm:top-20 sm:self-start"
-      >
-        Services
-      </h2>
+      <div className="mx-auto max-w-6xl px-5">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="label-rule text-[12px] font-bold uppercase tracking-[0.3em] text-gold">
+              Our services
+            </p>
+            <h2
+              id="services-heading"
+              className="mt-6 max-w-lg text-[1.9rem] font-semibold leading-tight text-paper sm:text-[2.4rem]"
+            >
+              Everything you need to see, secure, and stay connected.
+            </h2>
+          </div>
+          <p className="max-w-sm text-[14px] leading-relaxed text-smoke">
+            One local team for cameras, networks, computers, and smart
+            control, from the first site visit to after-sales support.
+          </p>
+        </div>
 
-      <div className="min-w-0">
-        <ul className="grid gap-3 sm:grid-cols-2">
+        <ul className="mt-12 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => {
             const Icon = service.icon
             return (
               <li
                 key={service.title}
-                className={`service-card group rounded-xl border border-border-dark/50 bg-surface-dark/50 p-5 animate-fade-in-up stagger-${index + 1}`}
-                style={{ opacity: 0 }}
+                className="group relative bg-ink-2 p-7 transition-colors hover:bg-ink-3"
               >
-                <div className="flex items-start gap-3">
-                  <div className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent-light transition-colors group-hover:bg-accent/20">
-                    <Icon className="h-[18px] w-[18px]" />
+                <span className="absolute left-0 top-0 h-full w-[3px] origin-top scale-y-0 bg-gold transition-transform duration-300 group-hover:scale-y-100" />
+                <div className="flex items-center justify-between">
+                  <div className="grid h-11 w-11 place-items-center rounded-full bg-gold text-ink">
+                    <Icon className="h-5 w-5" />
                   </div>
-                  <div>
-                    <h3 className="text-[15px] font-medium text-text-dark">
-                      {service.title}
-                    </h3>
-                    {service.subtitle && (
-                      <span className="text-[12px] text-faint-dark">
-                        {service.subtitle}
-                      </span>
-                    )}
-                    <p className="mt-1.5 text-[13px] leading-relaxed text-muted-dark">
-                      {service.description}
-                    </p>
-                  </div>
+                  <span className="font-tech text-[15px] font-semibold tracking-[0.2em] text-ash">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
                 </div>
+                <h3 className="mt-6 text-[17px] font-semibold text-gold-soft">
+                  {service.title}
+                </h3>
+                {service.subtitle && (
+                  <span className="text-[12px] text-ash">{service.subtitle}</span>
+                )}
+                <p className="mt-2 text-[13.5px] leading-relaxed text-smoke">
+                  {service.description}
+                </p>
               </li>
             )
           })}
-        </ul>
 
-        <div className="mt-6 flex flex-wrap gap-2">
-          {services.map((service) => (
-            <span
-              key={service.title}
-              className="inline-flex items-center gap-1.5 rounded-full border border-border-dark/50 bg-surface-dark/30 px-3 py-1 text-[12px] text-muted-dark"
+          {/* Fills the last grid cell with a call to action */}
+          <li className="relative flex flex-col justify-between overflow-hidden bg-gold p-7 text-ink sm:col-span-2 lg:col-span-2">
+            <p className="max-w-xs text-[20px] font-bold leading-snug">
+              Not sure what you need? We'll visit and advise.
+            </p>
+            <a
+              href="#contact"
+              className="mt-6 inline-flex w-fit items-center rounded-sm bg-ink px-6 py-3 font-tech text-[14px] font-bold uppercase tracking-[0.2em] text-gold transition-colors hover:bg-ink-3"
             >
-              <Check className="h-3 w-3 text-accent-light" />
-              {service.title}
-            </span>
-          ))}
-        </div>
+              Book a site visit
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
   )

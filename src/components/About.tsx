@@ -28,47 +28,50 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="grid scroll-mt-24 gap-3 border-t border-border-dark/70 py-10 sm:grid-cols-[6.5rem_1fr] sm:gap-8 sm:py-14"
+      className="scroll-mt-16 bg-paper py-20 text-ink sm:py-28"
     >
-      <h2
-        id="about-heading"
-        className="pt-1 font-mono text-[11px] uppercase tracking-[0.12em] text-faint-dark sm:sticky sm:top-20 sm:self-start"
-      >
-        About
-      </h2>
-
-      <div className="min-w-0">
-        <div className="max-w-xl space-y-4 text-[15px] leading-relaxed text-muted-dark">
-          <p>
-            Eagle Eye is your one-stop destination for security and technology
-            solutions. Based in Kayanna Bazar (PIN 673525), we bring years of
-            hands-on experience in CCTV surveillance, network infrastructure,
-            smart automation, and computer services.
+      <div className="mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+        <div>
+          <p className="label-rule text-[12px] font-bold uppercase tracking-[0.3em] text-gold-deep">
+            About us
           </p>
-          <p>
-            We believe security should be accessible and reliable. From a single
-            camera setup for a small shop to a full-scale surveillance network
-            for an enterprise, we design every solution with the same attention
-            to detail and commitment to quality.
-          </p>
+          <h2
+            id="about-heading"
+            className="mt-6 text-[1.9rem] font-semibold leading-tight sm:text-[2.4rem]"
+          >
+            Security should be accessible and reliable.
+          </h2>
+          <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-slate">
+            <p>
+              Eagle Eye is your one-stop destination for security and
+              technology solutions. Based in Kayanna Bazar (PIN 673525), we
+              bring years of hands-on experience in CCTV surveillance, network
+              infrastructure, smart automation, and computer services.
+            </p>
+            <p>
+              From a single camera setup for a small shop to a full-scale
+              surveillance network for an enterprise, we design every solution
+              with the same attention to detail and commitment to quality.
+            </p>
+          </div>
         </div>
 
-        <dl className="mt-8 grid gap-4 sm:grid-cols-2">
+        <dl className="grid content-start gap-x-8 sm:grid-cols-2">
           {highlights.map((item) => {
             const Icon = item.icon
             return (
               <div
                 key={item.label}
-                className="flex items-start gap-3 rounded-lg border border-border-dark/40 bg-surface-dark/30 p-4 transition-all hover:border-accent/30 hover:bg-surface-dark/50"
+                className="flex items-start gap-4 border-b border-stone py-6"
               >
-                <div className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-md bg-accent/10 text-accent-light">
-                  <Icon className="h-4 w-4" />
+                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-ink text-gold">
+                  <Icon className="h-[18px] w-[18px]" />
                 </div>
                 <div>
-                  <dt className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent-light">
+                  <dt className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold-deep">
                     {item.label}
                   </dt>
-                  <dd className="mt-1 text-[13px] leading-relaxed text-muted-dark">
+                  <dd className="mt-1 text-[15px] font-medium leading-snug">
                     {item.value}
                   </dd>
                 </div>
