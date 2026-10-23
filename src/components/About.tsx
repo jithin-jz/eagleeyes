@@ -28,20 +28,20 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="scroll-mt-16 bg-paper py-20 text-ink sm:py-28"
+      className="scroll-mt-16 bg-paper py-14 text-ink sm:py-20 lg:py-28"
     >
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 sm:gap-12 sm:px-5 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
         <div>
           <p className="label-rule text-[12px] font-bold uppercase tracking-[0.3em] text-gold-deep">
             About us
           </p>
           <h2
             id="about-heading"
-            className="mt-6 text-[1.9rem] font-semibold leading-tight sm:text-[2.4rem]"
+            className="mt-5 text-[1.6rem] font-semibold leading-tight sm:mt-6 sm:text-[2rem] lg:text-[2.4rem]"
           >
             Security should be accessible and reliable.
           </h2>
-          <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-slate">
+          <div className="mt-5 space-y-4 text-[14px] leading-relaxed text-slate sm:mt-6 sm:text-[15px]">
             <p>
               Eagle Eye is your one-stop destination for security and
               technology solutions. Based in Kayanna Bazar (PIN 673525), we
@@ -62,7 +62,7 @@ export default function About() {
             return (
               <div
                 key={item.label}
-                className="flex items-start gap-4 border-b border-stone py-6"
+                className="flex items-start gap-4 border-b border-stone py-5 sm:py-6"
               >
                 <div className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-ink text-gold">
                   <Icon className="h-[18px] w-[18px]" />
@@ -71,7 +71,7 @@ export default function About() {
                   <dt className="text-[11px] font-bold uppercase tracking-[0.25em] text-gold-deep">
                     {item.label}
                   </dt>
-                  <dd className="mt-1 text-[15px] font-medium leading-snug">
+                  <dd className="mt-1 text-[14px] font-medium leading-snug sm:text-[15px]">
                     {item.value}
                   </dd>
                 </div>
