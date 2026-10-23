@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#1a1a3e"/>
+  <circle cx="16" cy="14" r="6" stroke="#a78bfa" stroke-width="2" fill="none"/>
+  <circle cx="16" cy="14" r="2.5" fill="#7c3aed"/>
+  <path d="M4 14 C4 14 10 6 16 6 C22 6 28 14 28 14" stroke="#a78bfa" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <text x="16" y="27" text-anchor="middle" fill="#a78bfa" font-size="5" font-family="sans-serif" font-weight="600">EAGLE EYE</text>
+</svg>
