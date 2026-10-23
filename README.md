@@ -1,6 +1,6 @@
 # eagleeyes
 
-Eagle Eye — Premium Security & Automation Systems website.
+Eagle Eye: Premium Security & Automation Systems website.
 
 ## Overview
 Eagle Eye provides smart security, high-definition CCTV surveillance, intelligent automation, structured networking, biometric access control, and 24/7 technical support.

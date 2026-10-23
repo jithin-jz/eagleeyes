@@ -44,7 +44,7 @@ export default function Hero() {
         <p>
           Professional security and technology solutions for homes and
           businesses. We design, install, and maintain CCTV systems, network
-          infrastructure, biometric access, and smart automation — all backed by
+          infrastructure, biometric access, and smart automation, all backed by
           dedicated local support in Kayanna Bazar.
         </p>
       </div>

@@ -50,7 +50,7 @@ export default function Contact() {
       <div className="min-w-0">
         <p className="max-w-md text-[15px] leading-relaxed text-muted-dark">
           Need a security solution, a network setup, or just want to discuss
-          your requirements? Reach out — we're always happy to help.
+          your requirements? Reach out. We're always happy to help.
         </p>
 
         {/* Primary CTA */}

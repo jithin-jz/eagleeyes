@@ -14,7 +14,7 @@ const services = [
     icon: Camera,
     title: 'CCTV Installation',
     description:
-      'Complete surveillance setup — IP cameras, DVR/NVR systems, remote viewing, and 24/7 monitoring for homes and businesses.',
+      'Complete surveillance setup, including IP cameras, DVR/NVR systems, remote viewing, and 24/7 monitoring for homes and businesses.',
   },
   {
     icon: Network,
@@ -51,7 +51,7 @@ const services = [
     icon: Cpu,
     title: 'Automation',
     description:
-      'Smart home and office automation — lighting, appliances, curtains, and centralised control systems.',
+      'Smart home and office automation, including lighting, appliances, curtains, and centralised control systems.',
   },
 ]
 

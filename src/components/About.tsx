@@ -48,7 +48,7 @@ export default function About() {
           <p>
             We believe security should be accessible and reliable. From a single
             camera setup for a small shop to a full-scale surveillance network
-            for an enterprise — we design every solution with the same attention
+            for an enterprise, we design every solution with the same attention
             to detail and commitment to quality.
           </p>
         </div>
